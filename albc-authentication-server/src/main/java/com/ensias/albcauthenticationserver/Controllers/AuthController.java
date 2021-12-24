@@ -7,6 +7,7 @@ import com.ensias.albcauthenticationserver.dtos.UserDto;
 import com.ensias.albcauthenticationserver.models.User;
 import com.ensias.albcauthenticationserver.services.UserService;
 import com.ensias.albcauthenticationserver.tools.JwtUtil;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -22,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-
+@Log4j2
 public class AuthController {
     @Value("${jwt.hdr}")
     public String TOKEN_HEADER;
@@ -39,12 +40,15 @@ public class AuthController {
 
     @PostMapping(value = "/login")
     public HttpEntity<UserDto> login(@RequestBody LoginDto userDto){
+        log.info(userDto);
         try {
             User user = userService.validate(userDto.getLogin(),userDto.getPassword());
             if(user==null || user.getId()==null) return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userDto.getLogin(),userDto.getPassword()));
             UserDto userDto1 = new UserDto(user);
-            return ResponseEntity.ok().header(TOKEN_HEADER,jwtUtil.generateToken(userDto.getLogin())).body(userDto1);
+            String token = jwtUtil.generateToken(userDto.getLogin());
+            userDto1.setToken(token);
+            return ResponseEntity.ok().header(TOKEN_HEADER,token).body(userDto1);
 
 
         }catch (org.springframework.security.core.AuthenticationException e){

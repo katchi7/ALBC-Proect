@@ -57,4 +57,7 @@ public class UserService {
         }
         throw new UserServiceException(HttpStatus.UNAUTHORIZED,"an error occurred");
     }
+    public List<User> findOtherUsers(Long userId){
+        return userRepo.findOthers(userId);
+    }
 }

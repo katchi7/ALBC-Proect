@@ -16,5 +16,6 @@ public class User {
     private String userName;
     private String password;
     private Boolean accountActivated;
+    private String userImage;
 
 }

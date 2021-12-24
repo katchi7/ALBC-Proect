@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class UserDto {
     public UserDto(User user){
-        this(user.getId(),user.getFullName(),user.getPhone(),user.getEmail(),user.getUserName());
+        this(user.getId(),user.getFullName(),user.getPhone(),user.getEmail(),user.getUserName(), user.getUserImage());
     }
     private Long id;
     @NotNull
@@ -28,6 +28,7 @@ public class UserDto {
     @NotNull
     @Size(min = 3,max = 60)
     private String userName;
+    private String userImage;
     public boolean validId(){
         return id!=null;
     }

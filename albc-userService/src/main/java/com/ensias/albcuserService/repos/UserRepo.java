@@ -9,4 +9,6 @@ import java.util.List;
 public interface UserRepo extends JpaRepository<User,Long> {
     @Query("SELECT u from User as u where u.email=?1 or u.userName=?1 or u.phone=?1")
     List<User> findUserByLogin(String login);
+    @Query("SELECT  u from User as u where u.id!=?1")
+    List<User> findOthers(Long userId);
 }

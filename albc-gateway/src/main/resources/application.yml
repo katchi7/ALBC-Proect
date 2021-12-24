@@ -1,0 +1,60 @@
+server:
+  address: localhost
+  port: '9999'
+eureka:
+  client:
+    instance:
+      preferIpAddress: 'true'
+    fetch-registry: 'true'
+    register-with-eureka: 'true'
+    serviceUrl:
+      defaultZone: http://${eureka.address}:${eureka.port}/eureka
+  address: localhost
+  port: '8761'
+spring:
+  main:
+    web-application-type: reactive
+  application:
+    name: albc-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: userService
+          uri: lb://albc-user-service
+          predicates:
+            - Path=/albc-project/user-service/**
+          filters:
+            - AccessValidationFilter
+        - id: authService
+          uri: lb://albc-authentication-service
+          predicates:
+            - Path=/albc-project/authentication-service/**
+          filters:
+            - AccessValidationFilter
+        - id: tweetService
+          uri: lb://albc-tweet-service
+          predicates:
+            - Path=/albc-project/tweet-service/**
+          filters:
+            - AccessValidationFilter
+        - id: userTimeLineService
+          uri: lb://albc-user-timeline-service
+          predicates:
+            - Path=/albc-project/user-timeline-service/**
+          filters:
+            - AccessValidationFilter
+        - id: homeTimeLineService
+          uri: lb://albc-home-timeline-service
+          predicates:
+            - Path=/albc-project/home-timeLine-service/**
+          filters:
+            - AccessValidationFilter
+

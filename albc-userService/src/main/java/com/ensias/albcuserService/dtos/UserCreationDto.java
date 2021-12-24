@@ -19,8 +19,17 @@ public class UserCreationDto extends UserDto {
     @NotNull
     @Size(min = 5,max = 60)
     private String confirmPassword;
+
+    @Override
+    public String toString() {
+        return "UserCreationDto{" +
+                "password='" + password + '\'' +
+                ", confirmPassword='" + confirmPassword + '\'' +
+                "} " + super.toString();
+    }
+
     public User asUser(){
-        return new User(null,super.getFullName(),super.getPhone(),super.getEmail(),super.getUserName(),password,null);
+        return new User(null,super.getFullName(),super.getPhone(),super.getEmail(),super.getUserName(),password,null,getUserImage());
     }
     public boolean passwordValid(){
         return true;

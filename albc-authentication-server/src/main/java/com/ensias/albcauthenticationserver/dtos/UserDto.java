@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class UserDto {
     public UserDto(User user){
-        this(user.getId(),user.getFullName(),user.getPhone(),user.getEmail(),user.getUserName());
+        this(user.getId(),user.getFullName(),user.getPhone(),user.getEmail(),user.getUserName(), user.getUserImage(),null);
     }
     private Long id;
 
@@ -25,10 +25,12 @@ public class UserDto {
     private String email;
 
     private String userName;
+    private String userImage;
+    private String token;
     public boolean validId(){
         return id!=null;
     }
     public User asUser(){
-        return new User(id,fullName,phone,email,userName,null,null);
+        return new User(id,fullName,phone,email,userName,null,null,userImage);
     }
 }

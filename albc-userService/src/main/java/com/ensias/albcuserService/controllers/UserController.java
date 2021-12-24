@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/user")
@@ -86,5 +88,9 @@ public class UserController {
             throw new UserServiceException(HttpStatus.BAD_REQUEST,"Login is not valid");
         }
         return ResponseEntity.ok(new UserDto(userService.findUserBLogin(loginDto.getLogin())));
+    }
+    @GetMapping("/findOthers")
+    public HttpEntity<List<UserDto>> getOtherUsers(@RequestParam("userId") Long userId){
+        return ResponseEntity.ok(userService.findOtherUsers(userId).stream().map(UserDto::new).collect(Collectors.toList()));
     }
 }

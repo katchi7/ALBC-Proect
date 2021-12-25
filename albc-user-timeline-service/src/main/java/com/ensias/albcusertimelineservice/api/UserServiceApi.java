@@ -2,7 +2,7 @@ package com.ensias.albcusertimelineservice.api;
 
 
 
-import com.ensias.albcusertimelineservice.dtos.User;
+import com.ensias.albcusertimelineservice.model.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

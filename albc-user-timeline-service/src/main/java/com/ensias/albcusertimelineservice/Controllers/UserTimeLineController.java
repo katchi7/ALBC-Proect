@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/userTimeLine")
@@ -24,9 +25,9 @@ public class UserTimeLineController {
     }
 
     @GetMapping("/tweets")
-    public HttpEntity<List<TweetDto>> findTweetsByUser(@RequestParam(name = "userDto") Long userId){
+    public HttpEntity<List<TweetDto>> findTweetsByUser(@RequestParam(name = "userId") Long userId){
         if(userId==null) throw new UserTimelineException(HttpStatus.BAD_REQUEST,"Got an invalid input");
-        return ResponseEntity.ok(service.findTweetsByUser(userId));
+        return ResponseEntity.ok(service.findTweetsByUser(userId).stream().map(TweetDto::new).collect(Collectors.toList()));
     }
     @GetMapping("/tweetsAndResponses")
     public HttpEntity<List<TweetDto>> findTweetsAndResponsesByUser(@RequestParam(name = "userDto") Long userId){

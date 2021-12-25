@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="748a45e6-ff35-44b1-b64c-eb2370eb8956" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/albc-tweet-service/src/main/java/com/ensias/albctweetservice/Repositories/CommentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-tweet-service/src/main/java/com/ensias/albctweetservice/Repositories/CommentRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-tweet-service/src/main/java/com/ensias/albctweetservice/Services/TweetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-tweet-service/src/main/java/com/ensias/albctweetservice/Services/TweetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-tweet-service/src/main/java/com/ensias/albctweetservice/controllers/TweetController.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-tweet-service/src/main/java/com/ensias/albctweetservice/controllers/TweetController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-tweet-service/src/main/java/com/ensias/albctweetservice/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-tweet-service/src/main/java/com/ensias/albctweetservice/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/albc-user-timeline-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/Controllers/UserTimeLineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/Controllers/UserTimeLineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/api/UserServiceApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/api/UserServiceApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/CommentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/CommentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/MediaDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/MediaDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/RetweetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/RetweetDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/TweetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/TweetDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/TweetLikeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/TweetLikeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/dtos/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/services/UserTimeLineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/albc-user-timeline-service/src/main/java/com/ensias/albcusertimelineservice/services/UserTimeLineService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/albc-user-timeline-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/albc-user-timeline-service/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="22n3mNOH1K3htEWBxXyfHC59Nzr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/albc-authentication-server" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="748a45e6-ff35-44b1-b64c-eb2370eb8956" name="Default Changelist" comment="" />
+      <created>1640459682190</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640459682190</updated>
+      <workItem from="1640459683887" duration="50000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,6 +1,7 @@
 package com.ensias.albcusertimelineservice.dtos;
 
 
+import com.ensias.albcusertimelineservice.model.Comment;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,9 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 
 public class CommentDto {
+    public CommentDto(Comment comment){
+        this(comment.getCommentId(), comment.getComment(), comment.getUserId());
+    }
 
     private Long commentId;
     @NotNull
@@ -20,4 +24,8 @@ public class CommentDto {
     private String comment;
     @NotNull
     private Long userId;
+    public Comment asComment(){
+        return new Comment(commentId,comment,userId);
+    }
+
 }

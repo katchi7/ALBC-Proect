@@ -60,4 +60,7 @@ public class UserService {
     public List<User> findOtherUsers(Long userId){
         return userRepo.findOthers(userId);
     }
+    public List<User> findAllUsers(List<Long> users){
+        return userRepo.findAllById(users);
+    }
 }

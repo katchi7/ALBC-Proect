@@ -93,4 +93,8 @@ public class UserController {
     public HttpEntity<List<UserDto>> getOtherUsers(@RequestParam("userId") Long userId){
         return ResponseEntity.ok(userService.findOtherUsers(userId).stream().map(UserDto::new).collect(Collectors.toList()));
     }
+    @PostMapping("/getAllUsers")
+    public  HttpEntity<List<UserDto>> getAllUsers(@RequestBody List<Long> userIds){
+        return ResponseEntity.ok(userService.findAllUsers(userIds).stream().map(UserDto::new).collect(Collectors.toList()));
+    }
 }

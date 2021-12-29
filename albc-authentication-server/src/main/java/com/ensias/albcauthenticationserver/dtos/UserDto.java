@@ -8,18 +8,20 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class UserDto {
     public UserDto(User user){
-        this(user.getId(),user.getFullName(),user.getPhone(),user.getEmail(),user.getUserName(), user.getUserImage(),null);
+        this(user.getId(),user.getFullName(),user.getCreatedAt(),user.getPhone(),user.getEmail(),user.getUserName(), user.getUserImage(),null);
     }
     private Long id;
 
     private String fullName;
-
+    private Date createdAt;
     private String phone;
 
     private String email;
@@ -31,6 +33,6 @@ public class UserDto {
         return id!=null;
     }
     public User asUser(){
-        return new User(id,fullName,phone,email,userName,null,null,userImage);
+        return new User(id,fullName,createdAt,phone,email,userName,null,null,userImage);
     }
 }

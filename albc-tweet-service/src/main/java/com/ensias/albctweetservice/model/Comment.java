@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 @Data
@@ -19,4 +20,5 @@ public class Comment {
     private Long commentId;
     private String comment;
     private Long userId;
+    private Date createdAt;
 }

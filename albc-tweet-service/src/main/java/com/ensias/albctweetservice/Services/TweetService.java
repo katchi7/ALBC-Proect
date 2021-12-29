@@ -7,7 +7,9 @@ import com.ensias.albctweetservice.model.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -34,6 +36,7 @@ public class TweetService  {
 
     public Tweet createTweet(Tweet tweet){
         if(tweet.getMedia()!=null) mediaRepo.saveAll(tweet.getMedia());
+        tweet.setCreatedAt(new Date());
         return tweetRepo.save(tweet);
     }
     public Tweet findTweetById(Long id){
@@ -58,6 +61,7 @@ public class TweetService  {
 
     }
     public Tweet commentOnTweet(Long id, Comment comment){
+        comment.setCreatedAt(new Date());
         User user = userServiceApi.getUser(comment.getUserId());
         Tweet tweet = tweetRepo.findById(id).orElse(null);
         if(tweet == null ){

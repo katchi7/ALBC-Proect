@@ -1,13 +1,14 @@
-package com.ensias.albcgateway;
+/*package com.ensias.albcauthenticationserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AlbcGatewayApplicationTests {
+class AlbcAuthenticationServerApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
 
 }
+*/

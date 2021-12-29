@@ -29,7 +29,7 @@ public class UserCreationDto extends UserDto {
     }
 
     public User asUser(){
-        return new User(null,super.getFullName(),super.getPhone(),super.getEmail(),super.getUserName(),password,null,getUserImage());
+        return new User(null,super.getFullName(),null,super.getPhone(),super.getEmail(),super.getUserName(),password,null,getUserImage(),getDob());
     }
     public boolean passwordValid(){
         return true;

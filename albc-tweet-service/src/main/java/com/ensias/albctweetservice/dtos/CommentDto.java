@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
+
 
 @Data
 @AllArgsConstructor
@@ -14,7 +16,7 @@ import javax.validation.constraints.Size;
 
 public class CommentDto {
     public CommentDto(Comment comment){
-        this(comment.getCommentId(), comment.getComment(), comment.getUserId());
+        this(comment.getCommentId(), comment.getComment(), comment.getUserId(),comment.getCreatedAt());
     }
     private Long commentId;
     @NotNull
@@ -22,7 +24,8 @@ public class CommentDto {
     private String comment;
     @NotNull
     private Long userId;
+    private Date createdAt;
     public Comment asComment(){
-        return new Comment(commentId,comment,userId);
+        return new Comment(commentId,comment,userId,createdAt);
     }
 }

@@ -57,4 +57,9 @@ spring:
             - Path=/albc-project/home-timeLine-service/**
           filters:
             - AccessValidationFilter
-
+        - id: socialGraphService
+          uri: lb://social-graph-service
+          predicates:
+            - Path=/albc-project/social-graph-service/**
+          filters:
+            - AccessValidationFilter

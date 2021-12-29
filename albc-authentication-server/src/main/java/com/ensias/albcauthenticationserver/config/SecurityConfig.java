@@ -50,8 +50,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**")
+                .antMatchers("/albc-project/user-service/user/createUser")
                 .permitAll()
+                .antMatchers("/albc-project/authentication-service/login")
+                .permitAll()
+                .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .exceptionHandling().accessDeniedHandler(new AccessDeniedHandler() {

@@ -5,7 +5,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
+
 
 @Entity
 @Data
@@ -19,6 +21,7 @@ public class Tweet {
     @OneToMany(targetEntity = Media.class)
     private List<Media> media;
     private Long userId;
+    private Date createdAt;
     @Transient
     private User user;
     @OneToMany(targetEntity = Likes.class)

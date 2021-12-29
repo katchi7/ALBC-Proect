@@ -1,16 +1,18 @@
 package com.ensias.albctweetservice.dtos;
 
 import com.ensias.albctweetservice.model.*;
+import com.fasterxml.jackson.annotation.JsonSetter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.OneToMany;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
+
 
 @Data
 @AllArgsConstructor
@@ -20,7 +22,7 @@ public class TweetDto {
         this(
                 tweet.getId(),tweet.getText(),
                 tweet.getMedia()==null?null:tweet.getMedia().stream().map(MediaDto::new).collect(Collectors.toList()),
-                tweet.getUserId(),
+                tweet.getUserId(),tweet.getCreatedAt(),
                 null,
                 tweet.getUser(),
                 tweet.getLikes()==null?null:tweet.getLikes().stream().map(TweetLikeDto::new).collect(Collectors.toList()),
@@ -38,6 +40,7 @@ public class TweetDto {
     private List<MediaDto> media;
     @NotNull
     private Long userId;
+    private Date createdAt;
     @NotNull
     private Long operatorId;
     private User user;
@@ -49,7 +52,7 @@ public class TweetDto {
     public Tweet asTweet(){
         return new Tweet(
                 id,text,media==null?null:media.stream().map(MediaDto::asMedia).collect(Collectors.toList()),
-                userId,user,
+                userId,createdAt,user,
                 likes==null?null:likes.stream().map(TweetLikeDto::asLike).collect(Collectors.toList()),
                 comments==null?null:comments.stream().map(CommentDto::asComment).collect(Collectors.toList()),
                 retweets==null?null:retweets.stream().map(RetweetDto::asRetweet).collect(Collectors.toList())
@@ -57,5 +60,9 @@ public class TweetDto {
     }
     public boolean validate(){
         return operatorId==userId;
+    }
+    @JsonSetter("createdAt")
+    public void createdAtSetter(String in){
+        createdAt = new Date();
     }
 }
